@@ -14,9 +14,9 @@ namespace Planner
 
         //Public Properties
         public int Stories { get; set; }
-        public double Width { get; set; }
-        public double Depth { get; set; }
-        public double Volume
+        public int Width { get; set; }
+        public int Depth { get; set; }
+        public int Volume
         {
             get
             {
@@ -25,9 +25,12 @@ namespace Planner
         }
 
         //CONSTRUCTOR
-        public Building(string address)
+        public Building(string address, int stories, int width, int depth)
         {
             _address = address;
+            Stories = stories;
+            Width = width;
+            Depth = depth;
         }
 
         public void Construct()
