@@ -6,7 +6,7 @@ namespace Planner
     //Define class
     class Building
     {
-        //Private Properties 
+        //Private Properties
         private string _designer = "Michael Yankura";
         private DateTime _dateConstructed { get; set; }
         private string _address { get; set; }
@@ -24,7 +24,7 @@ namespace Planner
             }
         }
 
-        //C O N S T R U C T O R
+        //CONSTRUCTOR
         public Building(string address)
         {
             _address = address;
@@ -45,13 +45,12 @@ namespace Planner
 
         public void DisplayDetails()
         {
-            Console.WriteLine("******************************");
             Console.WriteLine(_address);
             Console.WriteLine("---------------------------");
             Console.WriteLine($"Designed by {_designer}");
             Console.WriteLine($"Constructed on {_dateConstructed}");
             Console.WriteLine($"Owned by {_owner}");
-            Console.WriteLine($"{Volume} cubit meters of space");
+            Console.WriteLine($"{Volume} cubic meters of space");
             Console.WriteLine("======================================");
         }
     }

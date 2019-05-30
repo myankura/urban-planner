@@ -7,6 +7,11 @@ namespace Planner
     {
         static void Main(string[] args)
         {
+            //Make a new instance of a City
+            City Verboseville = new City("Verboseville");
+            Verboseville.Mayor = "Mark Methods";
+            Verboseville.YearEstablished = 2019;
+
             //Create several buildings.
             Building FiveOneTwoEigth = new Building("512 8th Avenue");
             Building SixOneFiveBroad = new Building("615 Broadway");
@@ -37,19 +42,18 @@ namespace Planner
             SixOneFiveBroad.Purchase("Billy Mays");
             NineOneTwoSecond.Purchase("Ken M");
 
-            // List<Building> structures = new List<Building>()
-            // {
-            //     FiveOneTwoEigth, SixOneFiveBroad, NineOneTwoSecond
-            // };
+            //Add buildings to the list collection that lives in City.cs
+            Verboseville.NewBuilding(FiveOneTwoEigth);
+            Verboseville.NewBuilding(SixOneFiveBroad);
+            Verboseville.NewBuilding(NineOneTwoSecond);
 
-           List<Building> structures = new List<Building>() {
-               FiveOneTwoEigth, SixOneFiveBroad, NineOneTwoSecond
-           };
+            foreach(Building bldgs in Verboseville.BuildingList) {
+                bldgs.DisplayDetails();
+            }
 
-            foreach (Building building in structures)
-            {
-                building.DisplayDetails();
-            };
+            Console.WriteLine("----------------------");
+
+            Verboseville.DisplayCityInfo();
         }
     }
 }
