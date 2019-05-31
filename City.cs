@@ -7,9 +7,11 @@ namespace Planner
     class City
     {
         //CONSTRUCTOR
-        public City(string cityName)
+        public City(string cityName, string mayor, int yearEst)
         {
             CityName = cityName;
+            Mayor = mayor;
+            yearEst = YearEstablished;
         }
 
         public string CityName { get; set; }
@@ -19,7 +21,7 @@ namespace Planner
         public int YearEstablished { get; set; }
 
         //Create a list for holding buildings
-        public List<Building> BuildingList = new List<Building>();
+        public List<Building> BuildingList { get; set; }= new List<Building>();
 
         //Create a method for adding new buildings to the list
         public void NewBuilding(Building newBuilding)
